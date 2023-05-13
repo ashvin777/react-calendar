@@ -1,0 +1,9 @@
+.date {
+  padding: 10px;
+  min-height: 100px;
+  background-color: white;
+
+  &.disabled {
+    color: gray;
+  }
+}
