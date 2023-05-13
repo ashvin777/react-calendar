@@ -1,15 +1,14 @@
 @import '../../Rc.consts.scss';
 
-.days {
+.allDays {
   display: grid;
   // grid-template-columns: auto auto auto auto auto auto auto;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 
   gap: 1px;
   background-color: $border;
-  border-bottom: 1px solid $border;
 
-  .day {
+  .allDay {
     padding: 10px;
     background-color: #f9fafe;
   }

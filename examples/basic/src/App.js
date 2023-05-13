@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactCalendar from './ReactCalendar/RC';
+import { ReactCalendar, ReactCalenderProvider } from './ReactCalendar/';
 
 import './App.css';
 
 function App() {
   return (
-    <div className='container'>
-      <ReactCalendar>Tesitng 123</ReactCalendar>
-    </div>
+    <ReactCalenderProvider>
+      <div className='container'>
+        <ReactCalendar>Tesitng 123</ReactCalendar>
+      </div>
+    </ReactCalenderProvider>
   );
 }
 

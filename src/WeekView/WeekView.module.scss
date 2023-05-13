@@ -4,5 +4,10 @@
 
   border: 1px solid lightgray;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: scroll;
+
+  .header {
+    position: sticky;
+    top: 0;
+  }
 }

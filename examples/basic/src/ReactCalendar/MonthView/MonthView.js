@@ -6,10 +6,12 @@ import getWeekDays from '../utils/getWeekDays';
 import getNextDay from '../utils/getNextDay';
 import Days from './Days/Days';
 import Dates from './Dates/Dates';
+import { useReactCalendar } from '../RC.provider';
 
 export default function MonthView() {
-  const [date, setDate] = useState(new Date('12/01/2022'));
-  const [weekdayStartsFrom] = useState(0);
+  const { weekdayStartsFrom, date } = useReactCalendar();
+  // const [date, setDate] = useState(new Date('12/01/2022'));
+  // const [weekdayStartsFrom] = useState(0);
 
   const firstDayOfCalendarMonth = useMemo(
     () =>
@@ -52,11 +54,9 @@ export default function MonthView() {
   }, [date, firstDayOfCalendarMonth, , lastDayOfCalendarMonth]);
 
   return (
-    <>
-      <div className={styles.container}>
-        <Days days={days} />
-        <Dates dates={dates} />
-      </div>
-    </>
+    <div className={styles.container}>
+      <Days days={days} />
+      <Dates dates={dates} />
+    </div>
   );
 }

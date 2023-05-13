@@ -1,3 +1,2 @@
-import ReactCalendar from './RC';
-
-export default ReactCalendar;
+export { default as ReactCalendar } from './RC';
+export { default as ReactCalenderProvider } from './RC.provider';
