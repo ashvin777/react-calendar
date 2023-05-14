@@ -5,6 +5,7 @@ import styles from './Event.module.scss';
 import { useReactCalendar } from '../../../RC.provider';
 import { TIME_COL_SIZE } from '../WeekView.consts';
 import getDaysDifferenceBetweenDates from '../../../utils/getDaysDifferenceBetweenDates';
+import getAmPm from '../../../utils/getAmPm';
 
 export default function Event({ event, firstDayOfWeek }) {
   const { daysInWeek, weekViewWidth } = useReactCalendar();
@@ -39,7 +40,8 @@ export default function Event({ event, firstDayOfWeek }) {
 
   return (
     <div className={styles.event} style={style} ref={ref}>
-      {event.name}
+      {event.name} <br />
+      {getAmPm(event.startDate)}-{getAmPm(event.endDate)}
     </div>
   );
 }
