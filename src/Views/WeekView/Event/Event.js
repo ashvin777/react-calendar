@@ -9,7 +9,7 @@ import getDaysDifferenceBetweenDates from '../../../utils/getDaysDifferenceBetwe
 export default function Event({ event, firstDayOfWeek }) {
   const { daysInWeek, weekViewWidth } = useReactCalendar();
   const ref = useRef();
-  const [position, setPosition] = useState({});
+  const [style, setStyle] = useState({});
 
   useEffect(() => {
     if (ref.current && firstDayOfWeek) {
@@ -25,18 +25,20 @@ export default function Event({ event, firstDayOfWeek }) {
       );
 
       const perColSize = (weekViewWidth - TIME_COL_SIZE) / daysInWeek;
+      const left = TIME_COL_SIZE + perColSize * daysDiff;
+      const margin = 3;
 
-      setPosition({
-        left: TIME_COL_SIZE + perColSize * daysDiff + 'px',
-        top: startPosition + 3 + 'px',
-        height: endPosition - startPosition - 5 + 'px',
-        width: perColSize + 'px'
+      setStyle({
+        left: left + margin + 'px',
+        top: startPosition + margin + 'px',
+        height: endPosition - startPosition - margin * 2 + 'px',
+        width: perColSize - margin * 2 + 'px'
       });
     }
-  }, [firstDayOfWeek, weekViewWidth, setPosition]);
+  }, [firstDayOfWeek, weekViewWidth, setStyle]);
 
   return (
-    <div className={styles.event} style={position} ref={ref}>
+    <div className={styles.event} style={style} ref={ref}>
       {event.name}
     </div>
   );
