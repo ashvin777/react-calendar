@@ -8,9 +8,12 @@ import getWeekDays from '../../utils/getWeekDays';
 import getFirstDayOfWeek from '../../utils/getFirstDayOfWeek';
 import Timeline from './TimeLine/TimeLine';
 import Event from './Event/Event';
+import useWindowSize from '../../hooks/useWindowSize';
 
 export default function WeekView() {
   const ref = useRef();
+  const { windowWidth } = useWindowSize();
+
   const { date, weekdayStartsFrom, setWeekViewWidth } = useReactCalendar();
 
   const days = useMemo(
@@ -27,7 +30,7 @@ export default function WeekView() {
     if (ref.current) {
       setWeekViewWidth(ref.current.clientWidth);
     }
-  }, [setWeekViewWidth]);
+  }, [setWeekViewWidth, windowWidth]);
 
   return (
     <div className={styles.container} ref={ref}>
