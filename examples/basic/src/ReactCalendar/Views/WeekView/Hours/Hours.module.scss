@@ -5,20 +5,24 @@
   // grid-template-columns: auto auto auto auto auto auto auto;
   grid-template-columns: 100px repeat(7, minmax(0, 1fr));
 
-
   gap: 1px;
   background-color: $border;
-  border-bottom: 1px solid $border;
+  
 
   .dayHour {
     padding: 10px;
     background-color: white;
     min-height: 50px;
+    border-bottom: 1px solid $border;
 
     &:first-child {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-end;
+      border-bottom: 0;
+      background-color: $bg-gray;
+      padding: 0;
+      padding-right: 10px;
     }
   }
 }

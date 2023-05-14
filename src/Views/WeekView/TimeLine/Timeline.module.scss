@@ -1,18 +1,18 @@
+@import '../../../RC.consts.scss';
+
 .container {
   position: absolute;
   top: 0;
-  left: 40px;
-
+  left: 45px;
+  right: 0;
   z-index: 10;
-
-  width: 100%;
   height: 2px;
-  background-color: orangered;
+  background-color: $primary;
 
   .time {
     position: absolute;
     left: 0px;
-    background-color: orangered;
+    background-color: $primary;
     padding: 2px 5px;
     color: white;
     border-radius: 20px;

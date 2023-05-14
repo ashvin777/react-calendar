@@ -1,6 +1,8 @@
+@import '../../../RC.consts.scss';
+
 .day {
   padding: 10px;
-  background-color: #f9fafe;
+  background-color: $bg-gray;
 
   display: flex;
   flex-direction: column;
@@ -16,6 +18,6 @@
   }
 
   &.today {
-    background-color: darken(#f9fafe, 2%);
+    background-color: $bg-gray-active;
   }
 }

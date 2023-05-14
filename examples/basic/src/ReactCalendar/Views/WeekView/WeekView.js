@@ -7,6 +7,7 @@ import Hours from './Hours/Hours';
 import getWeekDays from '../../utils/getWeekDays';
 import getFirstDayOfWeek from '../../utils/getFirstDayOfWeek';
 import Timeline from './TimeLine/TimeLine';
+import Event from './Event/Event';
 
 export default function WeekView() {
   const { date, weekdayStartsFrom } = useReactCalendar();
@@ -30,6 +31,21 @@ export default function WeekView() {
       <div className={styles.body}>
         <Hours firstDayOfWeek={firstDayOfWeek} days={days} />
         <Timeline />
+        <Event
+          event={{
+            name: 'Meeting with Team',
+            startDate: new Date('05/14/2023 12:00'),
+            endDate: new Date('05/14/2023 13:00')
+          }}
+        />
+
+        <Event
+          event={{
+            name: 'Meeting with Team',
+            startDate: new Date('05/14/2023 02:30'),
+            endDate: new Date('05/14/2023 08:45')
+          }}
+        />
       </div>
     </div>
   );
