@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 40px;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 2px;
+  background-color: orangered;
+
+  .time {
+    position: absolute;
+    left: 0px;
+    background-color: orangered;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 20px;
+    transform: translateY(-50%);
+    line-height: 16px;
+  }
+}

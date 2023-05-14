@@ -3,9 +3,9 @@ import styles from './RC.module.scss';
 
 import getPrevMonth from './utils/getPrevMonth';
 import getNextMonth from './utils/getNextMonth';
-import MonthView from './MonthView/MonthView';
+import MonthView from './Views/MonthView/MonthView';
 import { VIEWS } from './RC.consts';
-import WeekView from './WeekView/WeekView';
+import WeekView from './Views/WeekView/WeekView';
 import { useReactCalendar } from './RC.provider';
 
 export default function RC() {

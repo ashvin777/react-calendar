@@ -1,0 +1,11 @@
+@import '../../../RC.consts.scss';
+
+.days {
+  display: grid;
+  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
+
+  gap: 1px;
+  background-color: $border;
+
+  border-bottom: 1px solid $border;
+}

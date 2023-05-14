@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  overflow-y: scroll;
+
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .body {
+    position: relative;
+  }
+}

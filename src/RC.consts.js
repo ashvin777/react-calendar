@@ -1,5 +1,7 @@
+export const MINUTE = 1000 * 60;
 export const MS_IN_HOUR = 1000 * 60 * 60;
 export const MS_IN_DAY = MS_IN_HOUR * 24;
+export const MIN_IN_DAY = 24 * 60;
 
 export const DAYS_IN_WEEK = [
   'Sunday',
