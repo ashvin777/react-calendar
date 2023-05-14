@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Timeline.module.scss';
-import { MINUTE, MIN_IN_DAY } from '../../../RC.consts';
+import { SECOND, MIN_IN_DAY } from '../../../RC.consts';
 import getMinutesBetweenMorningAndNow from '../../../utils/getMinutesBetweenMorningAndNow';
 
 export default function Timeline() {
@@ -21,7 +21,7 @@ export default function Timeline() {
 
     setPosition();
 
-    const interval = setInterval(setPosition, MINUTE);
+    const interval = setInterval(setPosition, SECOND);
     return () => clearInterval(interval);
   }, [setTopPosition]);
 
