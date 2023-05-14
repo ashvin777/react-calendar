@@ -1,4 +1,4 @@
-export default function getMinutesBetweenMorningAnd(dateTime) {
+export default function getMinutesFromMorning(dateTime) {
   const morning = new Date();
   morning.setHours(0, 0, 0, 0);
 

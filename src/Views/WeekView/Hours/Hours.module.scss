@@ -2,7 +2,6 @@
 
 .hour {
   display: grid;
-  // grid-template-columns: auto auto auto auto auto auto auto;
   grid-template-columns: 100px repeat(7, minmax(0, 1fr));
 
   gap: 1px;

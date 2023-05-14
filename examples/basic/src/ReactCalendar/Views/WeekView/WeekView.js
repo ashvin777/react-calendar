@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useReactCalendar } from '../../RC.provider';
 import styles from './WeekView.module.scss';
 import Days from './Days/Days';
@@ -10,7 +10,8 @@ import Timeline from './TimeLine/TimeLine';
 import Event from './Event/Event';
 
 export default function WeekView() {
-  const { date, weekdayStartsFrom } = useReactCalendar();
+  const ref = useRef();
+  const { date, weekdayStartsFrom, setWeekViewWidth } = useReactCalendar();
 
   const days = useMemo(
     () => getWeekDays({ weekdayStartsFrom }),
@@ -22,8 +23,14 @@ export default function WeekView() {
     [date, weekdayStartsFrom]
   );
 
+  useEffect(() => {
+    if (ref.current) {
+      setWeekViewWidth(ref.current.clientWidth);
+    }
+  }, [setWeekViewWidth]);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <div className={styles.header}>
         <Days days={days} firstDayOfWeek={firstDayOfWeek} />
         <AllDays days={days} />

@@ -5,9 +5,7 @@ export default function AllDays({ days }) {
     <div className={styles.allDays}>
       <div className={styles.allDay}>all day</div>
       {days.map((day) => (
-        <div className={styles.allDay} key={day}>
-        
-        </div>
+        <div className={styles.allDay} key={day}></div>
       ))}
     </div>
   );

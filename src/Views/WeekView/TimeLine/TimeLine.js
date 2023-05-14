@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Timeline.module.scss';
 import { SECOND, MIN_IN_DAY } from '../../../RC.consts';
-import getMinutesBetweenMorningAnd from '../../../utils/getMinutesBetweenMorningAnd';
+import getMinutesFromMorning from '../../../utils/getMinutesFromMorning';
 
 export default function Timeline() {
   const ref = useRef();
@@ -12,7 +12,7 @@ export default function Timeline() {
     function setPosition() {
       if (ref.current) {
         const pxPerMin = ref.current.parentNode.scrollHeight / MIN_IN_DAY;
-        const minNow = getMinutesBetweenMorningAnd(new Date());
+        const minNow = getMinutesFromMorning(new Date());
 
         setTopPosition(minNow * pxPerMin);
         setTime(new Date().getHours() + ':' + new Date().getMinutes());

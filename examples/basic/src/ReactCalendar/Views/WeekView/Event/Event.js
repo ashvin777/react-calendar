@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import getMinutesBetweenMorningAnd from '../../../utils/getMinutesBetweenMorningAnd';
+import getMinutesFromMorning from '../../../utils/getMinutesFromMorning';
 import { MIN_IN_DAY } from '../../../RC.consts';
 import styles from './Event.module.scss';
 
@@ -10,8 +10,8 @@ export default function Event({ event }) {
   useEffect(() => {
     if (ref.current) {
       const pxPerMin = ref.current.parentNode.scrollHeight / MIN_IN_DAY;
-      const minTillStart = getMinutesBetweenMorningAnd(event.startDate);
-      const minTillEnd = getMinutesBetweenMorningAnd(event.endDate);
+      const minTillStart = getMinutesFromMorning(event.startDate);
+      const minTillEnd = getMinutesFromMorning(event.endDate);
       const startPosition = minTillStart * pxPerMin;
       const endPosition = minTillEnd * pxPerMin;
 

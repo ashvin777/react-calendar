@@ -1,0 +1,1 @@
+export const TIME_COL_SIZE = 100;

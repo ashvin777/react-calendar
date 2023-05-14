@@ -7,10 +7,19 @@ export default function ReactCalenderProvider({ children }) {
   const [date, setDate] = useState(new Date());
   const [view, setView] = useState(VIEWS.MONTH);
   const [weekdayStartsFrom] = useState(0);
+  const [weekViewWidth, setWeekViewWidth] = useState(0);
 
   return (
     <RCContext.Provider
-      value={{ date, view, setDate, setView, weekdayStartsFrom }}
+      value={{
+        date,
+        view,
+        weekViewWidth,
+        setDate,
+        setView,
+        setWeekViewWidth,
+        weekdayStartsFrom
+      }}
     >
       {children}
     </RCContext.Provider>
