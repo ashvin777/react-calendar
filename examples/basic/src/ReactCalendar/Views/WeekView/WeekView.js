@@ -39,18 +39,29 @@ export default function WeekView() {
         <Hours firstDayOfWeek={firstDayOfWeek} days={days} />
         <Timeline />
         <Event
+          firstDayOfWeek={firstDayOfWeek}
           event={{
-            name: 'Meeting with Team',
+            name: 'Standup',
             startDate: new Date('05/14/2023 12:00'),
             endDate: new Date('05/14/2023 13:00')
           }}
         />
 
         <Event
+          firstDayOfWeek={firstDayOfWeek}
           event={{
             name: 'Meeting with Team',
             startDate: new Date('05/14/2023 02:30'),
             endDate: new Date('05/14/2023 08:45')
+          }}
+        />
+
+        <Event
+          firstDayOfWeek={firstDayOfWeek}
+          event={{
+            name: 'Tomorrow meeting',
+            startDate: new Date('05/15/2023 01:30'),
+            endDate: new Date('05/15/2023 02:45')
           }}
         />
       </div>
